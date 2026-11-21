@@ -2,9 +2,42 @@
 //! extracted from [vciy field notes](https://vciy.com/articles) and
 //! [vciy upstream advisories](https://vciy.com/advisories).
 //!
-//! - Null-NVD KEV precedence: <https://vciy.com/articles/null-score-kev-blindspot>
-//! - Appliance EPSS floor audit: <https://vciy.com/articles/one-percent-epss-appliance-floor>
-//! - Reflexive `Path::starts_with` containment (`vciy-2026-0001`): <https://vciy.com/advisories/vciy-2026-0001>
+//! ## Published Field Notes and Technical Analyses
+//!
+//! - Null-NVD KEV precedence (`CVE-2026-76519`, `CVE-2026-21589`, `CVE-2026-104935`):
+//!   <https://vciy.com/articles/null-score-kev-blindspot>
+//! - Appliance EPSS floor audit and PAN-OS isolation (`CVE-2026-0322`, `CVE-2026-102764`, `CVE-2025-61624`):
+//!   <https://vciy.com/articles/one-percent-epss-appliance-floor>
+//! - Sibling handlers and incomplete upstream CVE fixes (`CVE-2026-90774`, `CVE-2026-91107`, `CVE-2026-69115`):
+//!   <https://vciy.com/articles/sibling-handlers-incomplete-cve-fixes>
+//! - Fortinet FortiMail KEV forensic audit under null NVD (`CVE-2026-104286`):
+//!   <https://vciy.com/articles/cve-2026-104286-fortimail-kev-evidence-audit>
+//! - Cisco FMC CVSS 10.0 CNA vs null NVD remediation (`CVE-2026-20079`):
+//!   <https://vciy.com/articles/cve-2026-20079-cisco-fmc-cvss-10-null-nvd-remediation>
+//! - Citrix NetScaler 0.59% EPSS KEV incident response (`CVE-2026-88779`):
+//!   <https://vciy.com/articles/cve-2026-88779-citrix-netscaler-kev-low-epss-ir>
+//! - Modoboa DRF ViewSet inheritance bypass teardown (`CVE-2026-56780`, `vciy-2026-0005`):
+//!   <https://vciy.com/articles/cve-2026-56780-modoboa-drf-viewset-bypass-teardown>
+//! - Strapi KEV remediation when NVD scores 4.9 vs ADP 7.2 (`CVE-2023-22894`):
+//!   <https://vciy.com/articles/cve-2023-22894-strapi-cvss-49-vs-72-kev-remediation>
+//!
+//! ## Upstream Security Advisories
+//!
+//! - `vciy-2026-0001` (`orhun/rustypaste`, fixed in `v0.18.2`): <https://vciy.com/advisories/vciy-2026-0001>
+//! - `vciy-2026-0002` (`OS4ED/openSIS-Classic`, `CWE-639`): <https://vciy.com/advisories/vciy-2026-0002>
+//! - `vciy-2026-0003` (`openimsdk/open-im-server`, fixed in PRs #3828/#3829): <https://vciy.com/advisories/vciy-2026-0003>
+//! - `vciy-2026-0004` (`ccfos/nightingale`, coordinated disclosure): <https://vciy.com/advisories/vciy-2026-0004>
+//! - `vciy-2026-0005` (`modoboa/modoboa`, fixed in `2.12.0` via PR #4340): <https://vciy.com/advisories/vciy-2026-0005>
+//! - `vciy-2026-0006` (`1Panel-dev/CordysCRM`, coordinated disclosure): <https://vciy.com/advisories/vciy-2026-0006>
+//! - `vciy-2026-0007` (`jbardin/scp.py`, coordinated disclosure): <https://vciy.com/advisories/vciy-2026-0007>
+//! - `vciy-2026-0008` (`mhdzumair/mediaflow-proxy`, `CWE-918`): <https://vciy.com/advisories/vciy-2026-0008>
+//! - `vciy-2026-0009` (`givanz/Vvveb`, fixed in `1.0.9.0` / `GHSA-7h6v-ww3f-24pp`): <https://vciy.com/advisories/vciy-2026-0009>
+//!
+//! ## Reference Portals
+//!
+//! - CISA KEV catalogue with receipts: <https://vciy.com/kev>
+//! - Vulnerability Decision Records: <https://vciy.com/vdr>
+//! - Validation and methodology: <https://vciy.com/validation>
 
 use std::io::{Error, ErrorKind, Result};
 use std::path::{Component, Path, PathBuf};
