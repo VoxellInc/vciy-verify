@@ -11,7 +11,7 @@ Open-source Go module, Rust crate, and GitHub Action for multi-authority CVE tri
 ## Install & Run (Go)
 
 ```bash
-go install github.com/VoxellInc/vciy-verify/cmd/vciy-verify@v0.2.0
+go install github.com/VoxellInc/vciy-verify/cmd/vciy-verify@v0.2.1
 vciy-verify CVE-2026-76519 CVE-2026-20079 CVE-2026-0322
 vciy-verify -panos-xml running-config.xml
 ```
