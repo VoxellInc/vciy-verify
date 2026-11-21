@@ -1,0 +1,14 @@
+name: "VCIY CVE Receipt & Precedence Verifier"
+description: "Check CVE IDs against CISA KEV, CVE 5.1 CNA v3.1/v4.0 vectors, and FIRST EPSS without null-to-zero blind spots."
+author: "Voxell, Inc. (https://vciy.com)"
+inputs:
+  cves:
+    description: "Space-separated CVE identifiers to verify"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Run vciy-verify
+      shell: bash
+      run: |
+        go run github.com/VoxellInc/vciy-verify/cmd/vciy-verify@latest ${{ inputs.cves }} >> "$GITHUB_STEP_SUMMARY"

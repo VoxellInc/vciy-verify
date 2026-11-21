@@ -1,0 +1,11 @@
+[package]
+name = "vciy-verify"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Multi-authority CVE triage precedence and path-containment verifiers with bitemporal receipt links to vciy.com"
+homepage = "https://vciy.com"
+documentation = "https://vciy.com/articles"
+repository = "https://github.com/VoxellInc/vciy-verify"
+keywords = ["cve", "security", "kev", "epss", "vulnerability"]
+categories = ["command-line-utilities", "development-tools"]
